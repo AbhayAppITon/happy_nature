@@ -30,7 +30,6 @@ class _CommonButtonState extends State<CommonButton> {
         fit: StackFit.passthrough,
         overflow: Overflow.visible,
         children: <Widget>[
-          // Max Size Widget
           Container(
             height: widget.height,
             width: 250,
