@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_nature/ui/dashboard_screen.dart';
 import 'package:happy_nature/ui/otp_screen.dart';
 import 'package:happy_nature/ui/profile_screen.dart';
 
@@ -22,7 +23,7 @@ class _CommonButtonState extends State<CommonButton> {
       onTap: (){
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) =>  ProfileScreen()),
+          MaterialPageRoute(builder: (context) =>  DashboardScreen()),
         );
       },
       child: Stack(
