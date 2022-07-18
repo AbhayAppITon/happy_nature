@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:happy_nature/widgets/colors.dart';
 import 'package:happy_nature/widgets/common_button.dart';
+import 'package:happy_nature/widgets/costom_appbar.dart';
 import 'package:happy_nature/widgets/coustom_textformfiled.dart';
 import 'package:happy_nature/widgets/string.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,59 +24,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final TextEditingController emailController = TextEditingController();
     final TextEditingController phoneController = TextEditingController();
     final TextEditingController addressController = TextEditingController();
-
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            // Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_ios_new,color: Colors.black,),
-        ),
-        title: const Text(
-          "Update Profile",
-          style: TextStyle(color: Colors.black),
-        ),
-          actions: <Widget>[
-         Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12.0,horizontal: 10),
-          child: Container(
-            width: 70,
-           decoration: BoxDecoration(
-             borderRadius: BorderRadius.circular(50),
-             border: Border.all(
-               color: Colors.red
-             )
-           ),
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('h',style: TextStyle(color: Colors.red),),
-                    Text('100',style: TextStyle(color: Colors.red,fontSize: 12),),
-                    Icon(Icons.wallet_travel,color: Colors.blue,size: 15,)
-
-                  ],
-                ),
-              ),
-            ),
-           )
-            ),
-               Padding(
-               padding: const EdgeInsets.only(right: 30.0),
-                child: GestureDetector(
-                 onTap: () {},
-                 child: const Icon(
-                    Icons.notifications_outlined,color: Colors.black
-                      ),
-                   )
-                 ),
-                 ]
-               ),
+      appBar: CustomAppbar(title: "Update Profile"),
 
       body: SingleChildScrollView(
         child: Column(
