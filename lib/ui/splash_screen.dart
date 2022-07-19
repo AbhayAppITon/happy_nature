@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:happy_nature/ui/city&area_screen.dart';
 import 'package:happy_nature/ui/wallet_screen.dart';
 import 'package:happy_nature/widgets/colors.dart';
 import 'package:happy_nature/widgets/string.dart';
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         const Duration(seconds: 3), ()=>Navigator.push(
-        context, MaterialPageRoute(builder: (context)=> const Wallet_screen())));
+        context, MaterialPageRoute(builder: (context)=> const CityArea())));
   }
 
   @override

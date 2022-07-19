@@ -9,6 +9,7 @@ class MyString{
   static const String recharge = 'Recharge Wallet';
   static const String addMoney = 'Add money to your wallet';
   static const String voucher = 'Voucher Code (If any)';
+  static const String applyCode = 'Click to apply';
 
 
 

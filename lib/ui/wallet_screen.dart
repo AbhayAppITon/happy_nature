@@ -15,6 +15,7 @@ class Wallet_screen extends StatefulWidget {
 }
 
 class _Wallet_screenState extends State<Wallet_screen> {
+  int currentIndex= 2;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -28,7 +29,7 @@ class _Wallet_screenState extends State<Wallet_screen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 35),
             child: Container(
-              height: height*0.24,
+              height: height*0.25,
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border.all(
@@ -72,7 +73,7 @@ class _Wallet_screenState extends State<Wallet_screen> {
                        children: <Widget>[
                          // Max Size Widget
                          Container(
-                           height: 50,
+                           height: 50.h,
                            width: 220.w,
                            decoration: BoxDecoration(
                              border: Border.all(
@@ -128,7 +129,7 @@ class _Wallet_screenState extends State<Wallet_screen> {
 
                      Stack(
                        children: [
-                         Image.asset('assets/images/wallet_image.png',height: 75,)
+                         Image.asset('assets/images/wallet_image.png',height: 80,)
                        ],
                      )
                    ],
@@ -147,17 +148,13 @@ class _Wallet_screenState extends State<Wallet_screen> {
             height: 70.h,
             thickness: 1,
           ),
-          Column(
-            children: [
-              Container(
-                alignment: Alignment.topLeft,
-                padding: const EdgeInsets.only(left: 15),
-                child: const Text('My Transactions',
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
+          Container(
+            alignment: Alignment.topLeft,
+            padding: const EdgeInsets.only(left: 15),
+            child: const Text('My Transactions',
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(15.0),
@@ -165,9 +162,8 @@ class _Wallet_screenState extends State<Wallet_screen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                Text('Unbilld Consumption',style: TextStyle(fontSize: 18,color: MyColor.textColor),),
+                Text('Unbilld Consumption',style: TextStyle(fontSize: 17,color: MyColor.textColor),),
                 Text('₹ 0',style: TextStyle(color: MyColor.balanceColor,fontSize: 20)),
-
               ],
             ),
           ),
@@ -194,6 +190,36 @@ class _Wallet_screenState extends State<Wallet_screen> {
               height: 20,
               thickness: 1,
             ),
+          ),
+        ],
+      ),
+
+
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        elevation: 10,
+        currentIndex: currentIndex,
+        onTap:  (index) => setState(()=> currentIndex = index),
+
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home ),
+              label: 'home',
+              backgroundColor: Colors.blue
+
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.subscriptions_outlined),
+            label: 'Subscriptions',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'Wallet',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wallet_membership),
+            label: 'History',
           ),
         ],
       ),
