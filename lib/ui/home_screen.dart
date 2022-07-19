@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:happy_nature/ui/product_details.dart';
 import 'package:happy_nature/ui/tryme_screen.dart';
 import 'package:happy_nature/widgets/colors.dart';
 import 'package:happy_nature/widgets/common_button.dart';
@@ -113,6 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: 250,
                         stackContainerColor: MyColor.themeColor,
                         titleColor: Colors.white,
+                        image: 'assets/images/imgs.png',
                         height: 50,title: "Recharge Wallet",),
                     ],
                   ),
@@ -269,14 +271,23 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ),
                       ),
-                      CommonButton(
-                        borderColor: MyColor.themeColor,
-                        containerColor: MyColor.themeColor,
-                        stackContainerColor: Colors.white,
-                        titleColor: MyColor.themeColor,
-                        title: "Track Delivery",
-                        height: 50,
-                        width: MediaQuery.of(context).size.width/1.1,
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const ProductDetailsScreen()),
+                          );
+                        },
+                        child: CommonButton(
+                          borderColor: MyColor.themeColor,
+                          containerColor: MyColor.themeColor,
+                          stackContainerColor: Colors.white,
+                          titleColor: MyColor.themeColor,
+                          title: "Track Delivery",
+                          height: 50,
+                          image: 'assets/images/imgs.png',
+                          width: MediaQuery.of(context).size.width/1.1,
+                        ),
                       ),
                     ],
                   ),

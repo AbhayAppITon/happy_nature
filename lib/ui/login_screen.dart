@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_nature/ui/home_screen.dart';
 import 'package:happy_nature/widgets/base_textfield.dart';
 import 'package:happy_nature/widgets/common_button.dart';
 import 'package:happy_nature/widgets/colors.dart';
@@ -46,16 +47,25 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(height: 10,),
           BaseTextField(
           controller: phoneController,
+
             hint: 'Phone Number',
           ),
           const SizedBox(height: 50,),
-          CommonButton(
-            borderColor: MyColor.themeColor,
-            containerColor: Colors.white,
-            stackContainerColor: MyColor.themeColor,
-            titleColor: MyColor.titleColor,
-            width: 250,
-            height: 50,title: "Next",),
+          InkWell(
+            onTap: (){
+              Navigator.push(
+              context, MaterialPageRoute(builder: (context)=> HomeScreen()));
+            },
+            child: CommonButton(
+              borderColor: Colors.white,
+              containerColor: Colors.white,
+              stackContainerColor: MyColor.themeColor,
+              titleColor: Colors.white,
+              width: 250,
+              height: 50,title: "Next",
+              image: 'assets/images/imgs.png',
+            ),
+          ),
         ],
       ),
     );
