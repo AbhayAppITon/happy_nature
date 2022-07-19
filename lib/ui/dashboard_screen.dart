@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_nature/ui/home_screen.dart';
 import 'package:happy_nature/ui/subscription_screen.dart';
 import 'package:happy_nature/ui/wallet_screen.dart';
 import 'package:happy_nature/widgets/colors.dart';
@@ -20,7 +21,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         controller: _pageController,
         physics: NeverScrollableScrollPhysics(),
         children: <Widget>[
-          // DashboardScreen(),
+          HomeScreen(),
           SubscriptionScreen(),
           Wallet_screen(),
           HistoryScreen(),

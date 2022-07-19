@@ -50,7 +50,13 @@ class _LoginScreenState extends State<LoginScreen> {
             hint: 'Phone Number',
           ),
           const SizedBox(height: 50,),
-          CommonButton(height: 50,),
+          CommonButton(
+            borderColor: MyColor.themeColor,
+            containerColor: Colors.white,
+            stackContainerColor: MyColor.themeColor,
+            titleColor: MyColor.themeColor,
+            width: 250,
+            height: 50,title: "Next",),
         ],
       ),
     );

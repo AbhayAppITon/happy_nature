@@ -1,12 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:happy_nature/ui/city&area_screen.dart';
-import 'package:happy_nature/ui/wallet_screen.dart';
 import 'package:happy_nature/widgets/colors.dart';
 import 'package:happy_nature/widgets/string.dart';
-
 import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,13 +13,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   @override
   void initState() {
-
     super.initState();
     Timer(
-        const Duration(seconds: 3), ()=>Navigator.push(
-        context, MaterialPageRoute(builder: (context)=> const CityArea())));
+        const Duration(seconds:5), ()=>Navigator.push(
+        context, MaterialPageRoute(builder: (context)=> const LoginScreen())));
   }
 
   @override
@@ -31,58 +27,51 @@ class _SplashScreenState extends State<SplashScreen> {
     var height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              ClipPath(
-                clipper: WaveClipper(),
-                child: Container(
-                  height:  height*0.8,
-                  width: double.infinity,
-                  color:  MyColor.themeColor,
-
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 80.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/images/imgs2.png',height: height*0.2,),
-                        const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Text(
-                            MyString.fresh,
-                            style: TextStyle(fontSize: 20,color: Color(0xFF6FC6A8)),
+        body: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            ClipPath(
+              clipper: WaveClipper(),
+              child: Column(
+                children: [
+                  Container(
+                    height:  height*0.8,
+                    width: double.infinity,
+                    color:  MyColor.themeColor,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 80.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/images/imgs2.png',height: height*0.2,),
+                          const Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              MyString.fresh,
+                              style: TextStyle(fontSize: 20,color: Color(0xFF6FC6A8)),
+                            ),
                           ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 20.0),
-                          child: Text(
-                            MyString.initiative,
-                            textAlign: TextAlign.center,
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20.0),
+                            child: Text(
+                              MyString.initiative,
+                              textAlign: TextAlign.center,
 
-                            style: TextStyle(fontSize: 20,color: MyColor.allTextColor),
+                              style: TextStyle(fontSize: 20,color: MyColor.allTextColor),
+                            ),
                           ),
-                        ),
-
-
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-
-              Stack(
-                alignment: AlignmentDirectional.center,
-                fit: StackFit.passthrough,
-                overflow: Overflow.visible,
-                children: <Widget>[
-                  Positioned(
-
-                      child: Image.asset('assets/images/imgs3.png',height: 200,)),
                 ],
-              ),
-            ],
-          ),
+              )
+            ),
+
+            Positioned(
+              bottom:40,
+                child: Image.asset('assets/images/imgs3.png',height:height*0.4,)),
+          ],
         ),
 
     );

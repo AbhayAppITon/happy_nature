@@ -58,7 +58,15 @@ class _OtpScreenState extends State<OtpScreen> {
                   MaterialPageRoute(builder: (context) =>  const ProfileScreen()),
                 );
               },
-              child: CommonButton(height: 50)),
+              child: CommonButton(
+                height: 50,
+                width: 250,
+                title: "Next",
+                borderColor: MyColor.themeColor,
+                containerColor: Colors.white,
+               stackContainerColor: MyColor.themeColor,
+               titleColor: MyColor.themeColor,
+              )),
         ],
       ),
     );
