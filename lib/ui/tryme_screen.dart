@@ -9,16 +9,17 @@ class TryMeScreen extends StatefulWidget {
 }
 
 class _TryMeScreenState extends State<TryMeScreen> {
-  String dropdownvalue = 'Item 1';
-
-  // List of items in our dropdown menu
-  var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-  ];
+  String? day;
+  // String dropdownvalue = 'Item 1';
+  //
+  // // List of items in our dropdown menu
+  // var items = [
+  //   'Item 1',
+  //   'Item 2',
+  //   'Item 3',
+  //   'Item 4',
+  //   'Item 5',
+  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +85,7 @@ class _TryMeScreenState extends State<TryMeScreen> {
                         children: [
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 10),
-                            width: 140,
+                            width: 120,
                             child: Image.asset("assets/images/cow.png",height: 90,),
                           ),
                           Positioned(
@@ -100,33 +101,15 @@ class _TryMeScreenState extends State<TryMeScreen> {
                       ),
                       Column(
                         children: [
-                          Text("Premium Honey",style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400
-                          ),),
-                          DropdownButton(
-
-                            // Initial Value
-                            value: dropdownvalue,
-
-                            // Down Arrow Icon
-                            icon: const Icon(Icons.keyboard_arrow_down),
-
-                            // Array list of items
-                            items: items.map((String items) {
-                              return DropdownMenuItem(
-                                value: items,
-                                child: Text(items),
-                              );
-                            }).toList(),
-                            // After selecting the desired option,it will
-                            // change button value to selected value
-                            onChanged: (String? newValue) {
-                              setState(() {
-                                dropdownvalue = newValue!;
-                              });
-                            },
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text("Premium Badaam Milk ",style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                            ),
+                            ),
                           ),
+
                         ],
                       )
                     ],

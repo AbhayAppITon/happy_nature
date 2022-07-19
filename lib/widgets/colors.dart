@@ -7,5 +7,7 @@ class MyColor {
   static const Color RechageColor = Color(0xFFFFA3A3);
   static const Color borderColor = Color(0xFF2B876F);
   static const Color balanceColor = Color(0xFFE22C53);
+  static const Color titleColor = Color(0xFFFFFFFF);
+
 
 }

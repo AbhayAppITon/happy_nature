@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_nature/ui/city&area_screen.dart';
 import 'package:happy_nature/widgets/colors.dart';
 import 'package:happy_nature/widgets/costom_appbar.dart';
 import 'package:happy_nature/widgets/coustom_textformfiled.dart';
@@ -129,7 +130,7 @@ class _RechargeWalletState extends State<RechargeWallet> {
                 left: 42,
                 child: InkWell(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const RechargeWallet()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const CityArea()));
                   },
                   child: Container(
                     height: 50.h,

@@ -193,36 +193,6 @@ class _Wallet_screenState extends State<Wallet_screen> {
           ),
         ],
       ),
-
-
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        elevation: 10,
-        currentIndex: currentIndex,
-        onTap:  (index) => setState(()=> currentIndex = index),
-
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home ),
-              label: 'home',
-              backgroundColor: Colors.blue
-
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.subscriptions_outlined),
-            label: 'Subscriptions',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'Wallet',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.wallet_membership),
-            label: 'History',
-          ),
-        ],
-      ),
     );
   }
 }

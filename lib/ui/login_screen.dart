@@ -46,7 +46,6 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(height: 10,),
           BaseTextField(
           controller: phoneController,
-
             hint: 'Phone Number',
           ),
           const SizedBox(height: 50,),
@@ -54,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
             borderColor: MyColor.themeColor,
             containerColor: Colors.white,
             stackContainerColor: MyColor.themeColor,
-            titleColor: MyColor.themeColor,
+            titleColor: MyColor.titleColor,
             width: 250,
             height: 50,title: "Next",),
         ],
