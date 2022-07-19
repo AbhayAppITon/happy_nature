@@ -16,7 +16,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
 
-
     return Scaffold(
       backgroundColor: MyColor.themeColor,
       body: Column(
@@ -31,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
 
-          const SizedBox(height: 60,),
+          const SizedBox(height: 60),
           Container(
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.only(left: 25),

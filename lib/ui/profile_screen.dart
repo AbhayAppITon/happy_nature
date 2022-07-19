@@ -54,12 +54,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(height: 10,),
                           CustomTextFormFiled(
                             controller: nameController,
+                            hint:' Name',
                           ),
 
                           const SizedBox(height: 10,),
                           Container(
                             alignment: Alignment.topLeft,
-                            padding:  EdgeInsets.only(left: 8),
+                            padding:  const EdgeInsets.only(left: 8),
                             child: const Text(
                               'Email ID',
                               style: TextStyle(
@@ -72,6 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(height: 10,),
                           CustomTextFormFiled(
                             controller: emailController,
+                            hint:' Email Id',
                           ),
 
                           const SizedBox(height: 10,),
@@ -91,6 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(height: 10,),
                           CustomTextFormFiled(
                             controller: phoneController,
+                            hint:' Phone Number',
                           ),
 
                           const SizedBox(height: 10,),
@@ -114,7 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               maxLines: 3,
                               controller: addressController,
                               decoration: const InputDecoration(
-                                  // hintText: "Address",
+                                  hintText: 'Address',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                     borderSide: BorderSide(),
@@ -145,12 +148,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             Stack(
               fit: StackFit.passthrough,
-              overflow: Overflow.visible,
+              clipBehavior: Clip.none,
               children: <Widget>[
                 // Max Size Widget
                 Container(
-                  height: 50,
-                  width: 250,
+                  height: 50.w,
+                  width: 250.h,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: MyColor.themeColor,
@@ -165,8 +168,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   bottom: 8,
                   left: 4,
                   child: Container(
-                    height: 50,
-                    width: 250,
+                    height: 50.h,
+                    width: 250.w,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: MyColor.themeColor,

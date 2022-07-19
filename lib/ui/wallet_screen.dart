@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:happy_nature/ui/recharge_wallet.dart';
 import 'package:happy_nature/widgets/colors.dart';
 import 'package:happy_nature/widgets/common_button.dart';
 import 'package:happy_nature/widgets/costom_appbar.dart';
 import 'package:happy_nature/widgets/string.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class Wallet_screen extends StatefulWidget {
   const Wallet_screen({Key? key}) : super(key: key);
 
@@ -23,9 +26,9 @@ class _Wallet_screenState extends State<Wallet_screen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 35),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 35),
             child: Container(
-              height: height*0.25,
+              height: height*0.24,
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border.all(
@@ -43,34 +46,34 @@ class _Wallet_screenState extends State<Wallet_screen> {
                     child: Text(
                         MyString.wallet,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                     ),
                   ),
                   const Text(
                       MyString.balance,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20,color: MyColor.balanceColor),
-
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('+',style: TextStyle(fontSize: 30),),
-                      Text('₹ 0',style: TextStyle(color: Color(0xFF2B876F),fontSize: 25)),
-                      Text('(Voucher Bonus)',style: TextStyle(fontSize: 25),)
+                    children: const [
+                      Text('+',style: TextStyle(fontSize: 25),),
+                      Text('₹ 0',style: TextStyle(color: Color(0xFF2B876F),fontSize: 20)),
+                      Text('(Voucher Bonus)',style: TextStyle(fontSize: 20),)
                     ],
                   ),
-                 const SizedBox(height: 10,),
+                  SizedBox(height: 10.h,),
                  Row(
-                   mainAxisAlignment: MainAxisAlignment.center,
+                   crossAxisAlignment: CrossAxisAlignment.center,
+                   mainAxisAlignment: MainAxisAlignment.end,
                    children: [
                      Stack(
-                       overflow: Overflow.visible,
+                       clipBehavior: Clip.none,
                        children: <Widget>[
                          // Max Size Widget
                          Container(
                            height: 50,
-                           width: 220,
+                           width: 220.w,
                            decoration: BoxDecoration(
                              border: Border.all(
                                color: MyColor.themeColor,
@@ -83,14 +86,14 @@ class _Wallet_screenState extends State<Wallet_screen> {
                          ),
                          Positioned(
                            bottom: 8,
-                           left: 4,
+                           left: 2,
                            child: InkWell(
-                             // onTap: (){
-                             //   Navigator.push(context, MaterialPageRoute(builder: (context)=> const ));
-                             // },
+                             onTap: (){
+                               Navigator.push(context, MaterialPageRoute(builder: (context)=> const RechargeWallet()));
+                             },
                              child: Container(
-                               height: 50,
-                               width: 220,
+                               height: 50.h,
+                               width: 230.w,
                                decoration: BoxDecoration(
                                  border: Border.all(
                                    color: MyColor.themeColor,
@@ -102,11 +105,11 @@ class _Wallet_screenState extends State<Wallet_screen> {
                                child:  Row(
                                  mainAxisAlignment: MainAxisAlignment.center,
                                  children: [
-                                   const Text(
+                                    Text(
                                      MyString.recharge,
                                      style: TextStyle(
                                          color: MyColor.textColor,
-                                         fontSize: 15,
+                                         fontSize: 15.sp,
                                        fontWeight: FontWeight.bold
                                      ),
                                    ),
@@ -114,11 +117,9 @@ class _Wallet_screenState extends State<Wallet_screen> {
                                      'assets/images/imgs.png',
                                      height: 30,
                                      color: const Color(0xFF2B876F),
-
                                    )
                                  ],
                                ),
-
                              ),
                            ),
                          ),
@@ -126,9 +127,8 @@ class _Wallet_screenState extends State<Wallet_screen> {
                      ),
 
                      Stack(
-
                        children: [
-                         Image.asset('assets/images/wallet_image.png',height: 72)
+                         Image.asset('assets/images/wallet_image.png',height: 75,)
                        ],
                      )
                    ],
@@ -143,12 +143,21 @@ class _Wallet_screenState extends State<Wallet_screen> {
             textAlign: TextAlign.center,
             style: TextStyle(color: Color(0xFF2B876F)),
           ),
-          const Divider(
-            height: 70,
+           Divider(
+            height: 70.h,
             thickness: 1,
           ),
-          const Text('My Transactions',
-            style: TextStyle(fontWeight: FontWeight.bold),
+          Column(
+            children: [
+              Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(left: 15),
+                child: const Text('My Transactions',
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(15.0),
@@ -164,7 +173,7 @@ class _Wallet_screenState extends State<Wallet_screen> {
           ),
 
           Padding(
-            padding: EdgeInsets.only(left: 15.0),
+            padding: const EdgeInsets.only(left: 15.0),
             child: Row(
               children: const <Widget>[
                 Text('17th June 2022', textAlign: TextAlign.center),
@@ -174,8 +183,7 @@ class _Wallet_screenState extends State<Wallet_screen> {
                     padding: EdgeInsets.only(left: 80.0),
                     child: Text('₹ 72', textAlign: TextAlign.center),
                   ),
-                  ),
-
+                ),
               ],
             ),
           ),

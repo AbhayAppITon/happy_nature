@@ -4,6 +4,7 @@ import 'package:happy_nature/widgets/base_textfield.dart';
 import 'package:happy_nature/widgets/colors.dart';
 import 'package:happy_nature/widgets/common_button.dart';
 import 'package:happy_nature/widgets/string.dart';
+
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
 
@@ -22,7 +23,6 @@ class _OtpScreenState extends State<OtpScreen> {
         children: [
            const Padding(
             padding: EdgeInsets.only(top: 250.0,left: 16,right: 16),
-
             child: Text(
               MyString.CASHBACKRECHARG,
               style: TextStyle(
@@ -37,14 +37,12 @@ class _OtpScreenState extends State<OtpScreen> {
           Container(
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.only(left: 25),
-
               child: const Text(
                 'Enter OTP',
                 style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: Colors.white
-
                 ),
               )
           ),
@@ -57,7 +55,7 @@ class _OtpScreenState extends State<OtpScreen> {
               onTap: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  ProfileScreen()),
+                  MaterialPageRoute(builder: (context) =>  const ProfileScreen()),
                 );
               },
               child: CommonButton(height: 50)),

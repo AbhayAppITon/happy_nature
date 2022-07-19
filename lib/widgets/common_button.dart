@@ -28,7 +28,7 @@ class _CommonButtonState extends State<CommonButton> {
       },
       child: Stack(
         fit: StackFit.passthrough,
-        overflow: Overflow.visible,
+        clipBehavior: Clip.none,
         children: <Widget>[
           Container(
             height: widget.height,

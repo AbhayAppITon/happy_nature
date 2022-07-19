@@ -7,6 +7,10 @@ class MyString{
   static const String wallet = 'Wallet Balance';
   static const String balance = '₹ 72';
   static const String recharge = 'Recharge Wallet';
+  static const String addMoney = 'Add money to your wallet';
+  static const String voucher = 'Voucher Code (If any)';
+
+
 
   static const String happyPayment = '**All Happy Nature Payments are made through the Happy Nature wallet for easy tracking and invoicing';
 
